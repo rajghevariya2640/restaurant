@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import BContainer from "./BContainer";
 import BButton from "./BButton";
 import { Logo } from "./Icon";
 
 const Header = () => {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <header>
+    <header className={`header ${isSticky ? "sticky" : ""}`}>
       <BContainer>
         <div className="d-flex align-items-center justify-content-between">
           <a href="/">

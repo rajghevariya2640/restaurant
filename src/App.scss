@@ -25,10 +25,10 @@ body {
   line-height: 1.45;
   color: $text-color;
   font-family: $hanken;
-  @media screen and (max-width:991px) {
+  @media screen and (max-width: 991px) {
     font-size: 16px;
   }
-  @media screen and (max-width:575px) {
+  @media screen and (max-width: 575px) {
     font-size: 14px;
   }
 }
@@ -50,7 +50,12 @@ h6 {
   padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $jost;
 }
 
@@ -121,12 +126,12 @@ img {
 
 // Typography
 
-h1{
+h1 {
   font-size: 59px;
   font-weight: 700;
   color: $white;
   margin-bottom: 10px;
-  span{
+  span {
     color: $primary;
   }
   @media screen and (max-width: 1399px) {
@@ -140,14 +145,42 @@ h1{
   }
 }
 
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 // header
 header {
   padding: 30px 0;
   border-bottom: 1px solid rgba($white, 10%);
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 99;
+  &.sticky {
+    position: fixed;
+    backdrop-filter: blur(10px);
+    background-color: rgba($dark, 60%);
+    -webkit-animation: slideInDown 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+    -moz-animation: slideInDown 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+    -o-animation: slideInDown 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: slideInDown 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-animation-fill-mode: none;
+    -moz-animation-fill-mode: none;
+    -o-animation-fill-mode: none;
+    animation-fill-mode: none;
+  }
   .navbar {
     @media screen and (max-width: 991px) {
       margin-left: auto;
@@ -165,6 +198,9 @@ header {
       text-transform: capitalize;
       padding: 12px 20px !important;
       line-height: 1.3em;
+      &.active {
+        color: $primary;
+      }
     }
     .navbar-toggler {
       padding: 10px;
@@ -179,18 +215,18 @@ header {
 }
 
 // Banner Style
-.banner-main{
+.banner-main {
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   padding: 190px 0 100px;
   @media screen and (max-width: 991px) {
-      height: 100%;
+    height: 100%;
   }
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -198,7 +234,7 @@ header {
     width: 100%;
     background-color: rgba($black, 0.7);
   }
-  .primary-text{
+  .primary-text {
     color: $primary;
     position: relative;
     font-size: 14px;
@@ -209,8 +245,8 @@ header {
     padding-left: 16px;
     margin-bottom: 10px;
     display: block;
-    &::after{
-      content: '';
+    &::after {
+      content: "";
       position: absolute;
       top: 50%;
       left: 0;
@@ -221,7 +257,7 @@ header {
       transform: translateY(-50%);
     }
   }
-  .image-box{
+  .image-box {
     max-height: 600px;
     max-width: 450px;
     border-radius: 500px;
@@ -231,52 +267,52 @@ header {
     @media screen and (max-width: 991px) {
       max-width: 400px;
     }
-    img{
+    img {
       border-radius: 500px;
     }
-    .dosa{
+    .dosa {
       position: absolute;
       max-height: 150px;
       max-width: 150px;
       border: 3px solid $white;
       @media screen and (max-width: 991px) {
-          max-width: 120px;
-          max-height: 120px;
+        max-width: 120px;
+        max-height: 120px;
       }
     }
-    .dosa1{
+    .dosa1 {
       bottom: 0;
       left: 0;
-      transform: translate(-20%,-10%);
+      transform: translate(-20%, -10%);
     }
-    .dosa2{
+    .dosa2 {
       top: 0;
       right: 0;
-      transform: translate(20%,5%);
+      transform: translate(20%, 5%);
     }
   }
 }
 
 // About Us
-.about-us-section{
-  .img{
+.about-us-section {
+  .img {
     max-width: 534px;
     margin-left: auto;
   }
-  .content{
+  .content {
     background-color: $white;
     padding: 35px 25px;
     transform: translateX(-20%);
     max-width: 500px;
-    box-shadow: 12px 12px 40px rgba(0,0,0,0.05);
-    h6{
+    box-shadow: 12px 12px 40px rgba(0, 0, 0, 0.05);
+    h6 {
       position: relative;
       padding-left: 16px;
       font-size: 20px;
       margin-bottom: 20px;
       color: $primary;
-      &::after{
-        content: '';
+      &::after {
+        content: "";
         position: absolute;
         top: 50%;
         left: 0;
@@ -287,9 +323,27 @@ header {
         transform: translateY(-50%);
       }
     }
-    p{
+    p {
       margin-bottom: 15px;
     }
+  }
+}
+
+// Why Choose
+.why-choose {
+  height: 600px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-position: center center;
+  margin-bottom: 30px;
+  h6 {
+    background: linear-gradient(0deg, $black 20%, transparent);
+    padding: 50px 20px 20px;
+    color: $white;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
   }
 }
 
