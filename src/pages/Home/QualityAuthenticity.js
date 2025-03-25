@@ -8,7 +8,7 @@ const QualityAuthenticity = () => {
   return (
     <div className="our-story-section common-section section">
       <BContainer>
-        <BRow className="align-items-center">
+        <BRow className="align-items-center flex-column-reverse flex-lg-row">
           <BCol xs={12} lg={6}>
             <div className="content">
               <h6>Quality & Authenticity</h6>
