@@ -10,7 +10,7 @@ import BButton from "../../shared/BButton";
 
 const Banner = () => {
   return (
-    <div className="banner-main" style={{backgroundImage: `url('${BannerImage}')`}}>
+    <div className="banner-main" id="home" style={{backgroundImage: `url('${BannerImage}')`}}>
       <BContainer className="position-relative z-1">
         <BRow className="align-items-center">
           <BCol xs={12} lg={6}>
@@ -22,7 +22,7 @@ const Banner = () => {
               <p>
               Savor the crispy, golden perfection of our dosas, served with flavorful chutneys and aromatic sambar. From classic Masala Dosa to unique fusion delights, we bring you the taste of tradition with a modern twist.
               </p>
-              <BButton className="mt-4" icon={true}>Book a Table</BButton>
+              <BButton link to="tel:8490096181" icon={true} className="mt-4">Book a Table</BButton>
             </div>
           </BCol>
           <BCol xs={12} lg={6}>

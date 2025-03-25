@@ -98,11 +98,16 @@ img {
   font-weight: 700;
   position: relative;
   line-height: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   text-transform: capitalize;
+  svg {
+    path {
+      transition: $transition;
+    }
+  }
   &.btn-primary {
     padding: 17px 30px;
     border-radius: 100px;
@@ -136,6 +141,11 @@ img {
         width: 100%;
         transform: skew(0deg);
         left: 0;
+      }
+      svg {
+        path {
+          stroke: $dark;
+        }
       }
     }
   }
@@ -201,6 +211,10 @@ header {
     -o-animation-fill-mode: none;
     animation-fill-mode: none;
   }
+  &.toggle-menu {
+    backdrop-filter: blur(10px);
+    background-color: rgba($dark, 60%);
+  }
   .navbar {
     @media screen and (max-width: 991px) {
       margin-left: auto;
@@ -221,8 +235,8 @@ header {
       border: 0;
       @media screen and (max-width: 991px) {
         position: absolute;
-        top: 18px;
-        right: 10px;  
+        top: 0;
+        right: 0;
       }
       &:focus {
         box-shadow: none;
@@ -527,7 +541,7 @@ header {
     @media screen and (max-width: 450px) {
       padding-bottom: 10px;
       margin-bottom: 15px;
-      border-bottom: 1px dashed ;
+      border-bottom: 1px dashed;
     }
     h5 {
       font-size: 20px;
@@ -590,27 +604,39 @@ header {
 // Footer Style
 .footer-section {
   padding: 100px 0;
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1200px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   color: $black;
   @media screen and (max-width: 991px) {
     padding: 80px 0;
-    height: 1000px;
+    height: 80vh;
   }
   @media screen and (max-width: 767px) {
     padding: 50px 0;
-    height: 700px;
+    height: 60vh;
   }
   @media screen and (max-width: 575px) {
     padding: 30px 0;
-    height: 500px;
+    height: 50vh;
+  }
+  @media screen and (max-width: 375px) {
+    padding: 30px 0 5px;
   }
   h2 {
     font-weight: 900;
+  }
+  @media screen and (max-width: 375px) {
+    [class*="col-"] {
+      width: 100%;
+      h5{
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
   }
 }

@@ -6,7 +6,7 @@ import AboutImage from "../../assets/image/about-us.png";
 
 const AboutUs = () => {
   return (
-    <div className="about-us-section common-section section">
+    <div className="about-us-section common-section section" id="about">
       <BContainer>
         <h2 class="title text-center">About Us</h2>
         <BRow className="align-items-center">
