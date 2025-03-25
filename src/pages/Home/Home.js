@@ -14,8 +14,7 @@ const Home = () => {
       <AboutUs />
       <OurStory />
       <Menu />
-      <QualityAuthenticity/>
-      <Review />
+      <QualityAuthenticity />
       <WhyChooseUs />
       <Review />
     </>
