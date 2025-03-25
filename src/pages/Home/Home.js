@@ -1,15 +1,22 @@
 import React from "react";
-import Banner from "./Banner";
 import AboutUs from "./AboutUs";
-import WhyChooseUs from "./WhyChooseUs";
+import Banner from "./Banner";
+import Menu from "./Menu";
+import OurStory from "./OurStory";
+import QualityAuthenticity from "./QualityAuthenticity";
 import Review from "./Review";
+import WhyChooseUs from "./WhyChooseUs";
 
 const Home = () => {
   return (
     <>
       <Banner />
       <AboutUs />
-      <WhyChooseUs />
+      <OurStory />
+      <Menu />
+      {/* <QualityAuthenticity/>
+      <Review />
+      <WhyChooseUs /> */}
       <Review />
     </>
   );

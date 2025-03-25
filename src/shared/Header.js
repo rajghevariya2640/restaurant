@@ -37,7 +37,7 @@ const Header = () => {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-          <BButton icon={true}>Book a Table</BButton>
+          <BButton icon={true} className="d-none d-sm-flex">Book a Table</BButton>
         </div>
       </BContainer>
     </header>
