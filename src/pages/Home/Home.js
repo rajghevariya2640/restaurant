@@ -1,14 +1,16 @@
-import React from 'react'
-import Header from '../../shared/Header'
-import Banner from './Banner'
+import React from "react";
+import Banner from "./Banner";
+import Review from "./Review";
+import WhyChooseUs from "./WhyChooseUs";
 
 const Home = () => {
   return (
-      <>
-          <Header />
-          <Banner/>
-      </>
-  )
-}
+    <>
+      <Banner />
+      <Review />
+      <WhyChooseUs />
+    </>
+  );
+};
 
-export default Home
+export default Home;

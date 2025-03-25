@@ -1,10 +1,8 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import React from "react";
+import { Container } from "react-bootstrap";
 
-const BContainer = ({...props}) => {
-  return (
-    <Container {...props} />
-  )
-}
+const BContainer = ({ ...props }) => {
+  return <Container {...props} />;
+};
 
-export default BContainer
+export default BContainer;

@@ -2,7 +2,7 @@
 
 $transition: all 0.3s ease-in-out;
 $white: #fff;
-$black: #000;
+$black: #1e1d1d;
 $primary: #d6ae08;
 $dark: #0e110d;
 $text-color: #aeb0b4;
@@ -21,7 +21,6 @@ $theme-colors: (
 }
 
 body {
-  background-color: $dark;
   font-size: 16px;
   line-height: 1.45;
   color: $text-color;
@@ -50,7 +49,18 @@ img {
   height: auto;
   object-fit: contain;
 }
-
+.title {
+  font-size: 50px;
+  color: $black;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+.section {
+  padding: 100px 0;
+}
+.pb-70 {
+  padding-bottom: 70px;
+}
 // Custom btn
 .btn {
   font-weight: 700;
@@ -97,59 +107,93 @@ img {
 }
 
 // header
-header{
-    padding: 30px 0;
-    border-bottom: 1px solid rgba($white, 10%);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 99;
-    .navbar{
-        @media screen and (max-width: 991px) {
-            margin-left: auto;
-            position: static;
-            .navbar-collapse{
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                border-bottom: 1px solid rgba($white, 10%);
-            }
-        }
-        .nav-link{
-            color: $white;
-            text-transform: capitalize;
-            padding: 12px 20px !important;
-            line-height: 1.3em;
-        }
-        .navbar-toggler{
-            padding: 10px;
-            &:focus{
-                box-shadow: none;
-            }
-            .navbar-toggler-icon{
-                background-image: url("./assets/image/menuIcon.svg");
-            }
-        }
+header {
+  padding: 30px 0;
+  border-bottom: 1px solid rgba($white, 10%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  .navbar {
+    @media screen and (max-width: 991px) {
+      margin-left: auto;
+      position: static;
+      .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid rgba($white, 10%);
+      }
     }
+    .nav-link {
+      color: $white;
+      text-transform: capitalize;
+      padding: 12px 20px !important;
+      line-height: 1.3em;
+    }
+    .navbar-toggler {
+      padding: 10px;
+      &:focus {
+        box-shadow: none;
+      }
+      .navbar-toggler-icon {
+        background-image: url("./assets/image/menuIcon.svg");
+      }
+    }
+  }
 }
 
 // Banner Style
-.banner-main{
-  background-image: url('./assets/image/banner.jpg');
+.banner-main {
+  background-image: url("./assets/image/banner.jpg");
   background-position: center;
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   padding: 214px 0 100px;
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     background-color: rgba($black, 0.6);
+  }
+}
+
+// Customer Review
+.customer-review {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto 30px;
+  img {
+    margin-bottom: 30px;
+  }
+  h4 {
+    color: $black;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  p {
+    color: rgba($dark, 60%);
+  }
+}
+
+// Footer Style
+.footer-section {
+  padding: 100px 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: $black;
+  h2 {
+    font-weight: 900;
   }
 }
