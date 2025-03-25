@@ -12,14 +12,14 @@ const Footer = () => {
     >
       <BContainer>
         <BRow>
-          <BCol md={6}>
+          <BCol lg={6} className="mb-3 mb-lg-0">
             <h2>Shree sai malhar dhosa</h2>
           </BCol>
-          <BCol md={3}>
+          <BCol lg={3} className="mb-3 mb-lg-0">
             <h5>PHONE NUMBER</h5>
             <p>+91 84900 96181</p>
           </BCol>
-          <BCol md={3}>
+          <BCol lg={3} className="mb-3 mb-lg-0">
             <h5>EMAIL ADDRESS</h5>
             <p>hello@reallygreatsite.com</p>
           </BCol>
