@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className={`header ${isSticky ? "sticky" : ""}`}>
       <BContainer>
-        <div className="d-flex align-items-center justify-content-between">
+        <div className="d-flex align-items-center justify-content-between flex-wrap">
           <a href="/">
             <Logo />
           </a>

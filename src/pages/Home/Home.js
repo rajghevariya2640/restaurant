@@ -14,9 +14,9 @@ const Home = () => {
       <AboutUs />
       <OurStory />
       <Menu />
-      {/* <QualityAuthenticity/>
+      <QualityAuthenticity/>
       <Review />
-      <WhyChooseUs /> */}
+      <WhyChooseUs />
       <Review />
     </>
   );
