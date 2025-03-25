@@ -4,7 +4,7 @@ import { RightArrow } from "./Icon";
 
 const BButton = ({ ...props }) => {
   return (
-    <Button>
+    <Button {...props}>
       {props.children}
       {props.icon && <RightArrow />}
     </Button>

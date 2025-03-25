@@ -21,10 +21,16 @@ $theme-colors: (
 }
 
 body {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.45;
   color: $text-color;
   font-family: $hanken;
+  @media screen and (max-width:991px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width:575px) {
+    font-size: 14px;
+  }
 }
 
 a {
@@ -42,6 +48,10 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $jost;
 }
 
 img {
@@ -79,6 +89,9 @@ img {
     overflow: hidden;
     transition: all 0.5s ease-in-out;
     z-index: 1;
+    @media screen and (max-width: 767px) {
+      padding: 12px 16px;
+    }
     &::before {
       content: "";
       display: block;
@@ -103,6 +116,27 @@ img {
         left: 0;
       }
     }
+  }
+}
+
+// Typography
+
+h1{
+  font-size: 59px;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: 10px;
+  span{
+    color: $primary;
+  }
+  @media screen and (max-width: 1399px) {
+    font-size: 50px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 46px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 40px;
   }
 }
 
@@ -145,22 +179,117 @@ header {
 }
 
 // Banner Style
-.banner-main {
-  background-image: url("./assets/image/banner.jpg");
+.banner-main{
   background-position: center;
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  padding: 214px 0 100px;
-  &::after {
-    content: "";
+  padding: 190px 0 100px;
+  @media screen and (max-width: 991px) {
+      height: 100%;
+  }
+  &::after{
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba($black, 0.6);
+    background-color: rgba($black, 0.7);
+  }
+  .primary-text{
+    color: $primary;
+    position: relative;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-left: 16px;
+    margin-bottom: 10px;
+    display: block;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 7px;
+      width: 7px;
+      border-radius: 5px;
+      background-color: $primary;
+      transform: translateY(-50%);
+    }
+  }
+  .image-box{
+    max-height: 600px;
+    max-width: 450px;
+    border-radius: 500px;
+    margin: 0 auto;
+    border: 3px solid $white;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      max-width: 400px;
+    }
+    img{
+      border-radius: 500px;
+    }
+    .dosa{
+      position: absolute;
+      max-height: 150px;
+      max-width: 150px;
+      border: 3px solid $white;
+      @media screen and (max-width: 991px) {
+          max-width: 120px;
+          max-height: 120px;
+      }
+    }
+    .dosa1{
+      bottom: 0;
+      left: 0;
+      transform: translate(-20%,-10%);
+    }
+    .dosa2{
+      top: 0;
+      right: 0;
+      transform: translate(20%,5%);
+    }
+  }
+}
+
+// About Us
+.about-us-section{
+  .img{
+    max-width: 534px;
+    margin-left: auto;
+  }
+  .content{
+    background-color: $white;
+    padding: 35px 25px;
+    transform: translateX(-20%);
+    max-width: 500px;
+    box-shadow: 12px 12px 40px rgba(0,0,0,0.05);
+    h6{
+      position: relative;
+      padding-left: 16px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: $primary;
+      &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 8px;
+        width: 8px;
+        border-radius: 5px;
+        background-color: $primary;
+        transform: translateY(-50%);
+      }
+    }
+    p{
+      margin-bottom: 15px;
+    }
   }
 }
 
